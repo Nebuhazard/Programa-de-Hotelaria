@@ -1,5 +1,6 @@
 ++==|*PROJETO JAVA*|==++
 Desenvolvimento de sistema para hotéis.
+Programa desenvolvido em Java e MySQL.
 
 ==|*VÍDEO DO PROJETO*|==
 https://www.youtube.com/watch?v=GWq39HwCKSc&list=PLCNFRvVK1LVOftaQtWa2GKjnY3EYxFbfn&index=2
