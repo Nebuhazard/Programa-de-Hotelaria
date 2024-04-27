@@ -1,0 +1,29 @@
+++==|*PROJETO JAVA*|==++
+Desenvolvimento de sistema para hotéis.
+
+==|*VÍDEO DO PROJETO*|==
+https://www.youtube.com/watch?v=GWq39HwCKSc&list=PLCNFRvVK1LVOftaQtWa2GKjnY3EYxFbfn&index=2
+
+==|*PROGRAMAS UTILIZADOS*|==
+* JDK
+* JAVA FX
+* netbeans
+* MySQL workbench
+* conector/j
+* wampserver
+* github desktop
+* gimp
+
+==|*NÍVEIS*|==
+* 1° nível
+tela de login
+tela principal
+tela cadastro de funcionários
+
+* 2° nível
+criação do banco de dados
+criação da tabela de funcionários
+desenvolver classes para comunicação do programa e banco de dados
+
+==|*PASSOS*|==
+1- iniciar o projeto.
