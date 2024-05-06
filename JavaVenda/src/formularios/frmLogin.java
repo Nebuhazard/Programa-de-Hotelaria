@@ -1,21 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package formularios;
 
 import classes.Dados;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author sandr
- */
-public class frmLogin extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmLogin
-     */
+public class frmLogin extends javax.swing.JFrame {
+    private Dados msDados;
+    
+    public void setDados(Dados msDados){
+        this.msDados = msDados;
+    }
     public frmLogin() {
         initComponents();
     }
@@ -94,22 +90,22 @@ public class frmLogin extends javax.swing.JFrame {
                         .addComponent(btnEntrar))
                     .addComponent(txtUsuario)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel3)))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -143,7 +139,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     //botão da tela de login para entrar no sistema
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        Dados msDados = new Dados();
+        
         if (!msDados.validarUsuario(txtUsuario.getText(), new String (txtSenha.getPassword()))){
             JOptionPane.showMessageDialog(rootPane, "Usuário ou senha incorretas");
             txtUsuario.setText("");
@@ -152,6 +148,9 @@ public class frmLogin extends javax.swing.JFrame {
             return;
         }
         frmPrincipal mPrincipal = new frmPrincipal();
+        this.setVisible(false);
+        mPrincipal.setDados(msDados);
+        mPrincipal.setExtendedState(JFrame.MAXIMIZED_BOTH);
         mPrincipal.setVisible(true);
     }//GEN-LAST:event_btnEntrarActionPerformed
 

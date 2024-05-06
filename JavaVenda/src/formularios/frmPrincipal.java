@@ -1,18 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package formularios;
 
-/**
- *
- * @author sandr
- */
-public class frmPrincipal extends javax.swing.JFrame {
+import classes.Dados;
 
-    /**
-     * Creates new form frmPrincipal
-     */
+public class frmPrincipal extends javax.swing.JFrame {
+    private Dados msDados;
+    
+    public void setDados(Dados msDados){
+    this.msDados = msDados;
+    }
+    
     public frmPrincipal() {
         initComponents();
     }
@@ -26,22 +23,121 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        dpnDesk = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuArquivo = new javax.swing.JMenu();
+        mnuArquivoClientes = new javax.swing.JMenuItem();
+        mnuArquivoProdutos = new javax.swing.JMenuItem();
+        mnuArquivoUsuarios = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        mnuArquivotSenha = new javax.swing.JMenuItem();
+        mnuArquivotUsuario = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        mnuArquivoSair = new javax.swing.JMenuItem();
+        mnuMovimentos = new javax.swing.JMenu();
+        mnuMovimentosnovaVenda = new javax.swing.JMenuItem();
+        mnuMovimentosRelatoriovenda = new javax.swing.JMenuItem();
+        mnuAjuda = new javax.swing.JMenu();
+        mnuAjudaSobre = new javax.swing.JMenuItem();
+        mnuAjudaAjuda = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de vendas");
+
+        dpnDesk.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout dpnDeskLayout = new javax.swing.GroupLayout(dpnDesk);
+        dpnDesk.setLayout(dpnDeskLayout);
+        dpnDeskLayout.setHorizontalGroup(
+            dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 631, Short.MAX_VALUE)
+        );
+        dpnDeskLayout.setVerticalGroup(
+            dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 429, Short.MAX_VALUE)
+        );
+
+        mnuArquivo.setText("Arquivo   |");
+
+        mnuArquivoClientes.setText("Clientes");
+        mnuArquivo.add(mnuArquivoClientes);
+
+        mnuArquivoProdutos.setText("Produtos");
+        mnuArquivo.add(mnuArquivoProdutos);
+
+        mnuArquivoUsuarios.setText("Usuários");
+        mnuArquivoUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuArquivoUsuariosActionPerformed(evt);
+            }
+        });
+        mnuArquivo.add(mnuArquivoUsuarios);
+        mnuArquivo.add(jSeparator1);
+
+        mnuArquivotSenha.setText("Trocar Senha");
+        mnuArquivo.add(mnuArquivotSenha);
+
+        mnuArquivotUsuario.setText("Trocar Usuário");
+        mnuArquivotUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuArquivotUsuarioActionPerformed(evt);
+            }
+        });
+        mnuArquivo.add(mnuArquivotUsuario);
+        mnuArquivo.add(jSeparator2);
+
+        mnuArquivoSair.setText("Sair");
+        mnuArquivo.add(mnuArquivoSair);
+
+        jMenuBar1.add(mnuArquivo);
+
+        mnuMovimentos.setText("Movimentos   |");
+
+        mnuMovimentosnovaVenda.setText("Nova Venda");
+        mnuMovimentos.add(mnuMovimentosnovaVenda);
+
+        mnuMovimentosRelatoriovenda.setText("Relatório Venda");
+        mnuMovimentos.add(mnuMovimentosRelatoriovenda);
+
+        jMenuBar1.add(mnuMovimentos);
+
+        mnuAjuda.setText("Ajuda");
+
+        mnuAjudaSobre.setText("Sobre");
+        mnuAjuda.add(mnuAjudaSobre);
+
+        mnuAjudaAjuda.setText("Ajuda");
+        mnuAjuda.add(mnuAjudaAjuda);
+
+        jMenuBar1.add(mnuAjuda);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 882, Short.MAX_VALUE)
+            .addComponent(dpnDesk)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addComponent(dpnDesk)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnuArquivotUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArquivotUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuArquivotUsuarioActionPerformed
+
+    private void mnuArquivoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArquivoUsuariosActionPerformed
+        frmUsuarios mUsuarios = new frmUsuarios();
+        mUsuarios.setDados(msDados);
+        dpnDesk.add(mUsuarios);
+        mUsuarios.show();
+        
+    }//GEN-LAST:event_mnuArquivoUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +175,22 @@ public class frmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane dpnDesk;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JMenu mnuAjuda;
+    private javax.swing.JMenuItem mnuAjudaAjuda;
+    private javax.swing.JMenuItem mnuAjudaSobre;
+    private javax.swing.JMenu mnuArquivo;
+    private javax.swing.JMenuItem mnuArquivoClientes;
+    private javax.swing.JMenuItem mnuArquivoProdutos;
+    private javax.swing.JMenuItem mnuArquivoSair;
+    private javax.swing.JMenuItem mnuArquivoUsuarios;
+    private javax.swing.JMenuItem mnuArquivotSenha;
+    private javax.swing.JMenuItem mnuArquivotUsuario;
+    private javax.swing.JMenu mnuMovimentos;
+    private javax.swing.JMenuItem mnuMovimentosRelatoriovenda;
+    private javax.swing.JMenuItem mnuMovimentosnovaVenda;
     // End of variables declaration//GEN-END:variables
 }
