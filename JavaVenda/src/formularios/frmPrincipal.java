@@ -23,6 +23,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
         dpnDesk = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuArquivo = new javax.swing.JMenu();
@@ -50,12 +51,14 @@ public class frmPrincipal extends javax.swing.JFrame {
         dpnDesk.setLayout(dpnDeskLayout);
         dpnDeskLayout.setHorizontalGroup(
             dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 631, Short.MAX_VALUE)
+            .addGap(0, 678, Short.MAX_VALUE)
         );
         dpnDeskLayout.setVerticalGroup(
             dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
         );
+
+        jScrollPane1.setViewportView(dpnDesk);
 
         mnuArquivo.setText("Arquivo   |");
 
@@ -63,6 +66,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         mnuArquivo.add(mnuArquivoClientes);
 
         mnuArquivoProdutos.setText("Produtos");
+        mnuArquivoProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuArquivoProdutosActionPerformed(evt);
+            }
+        });
         mnuArquivo.add(mnuArquivoProdutos);
 
         mnuArquivoUsuarios.setText("Usuários");
@@ -117,11 +125,11 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dpnDesk)
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dpnDesk)
+            .addComponent(jScrollPane1)
         );
 
         pack();
@@ -131,6 +139,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuArquivotUsuarioActionPerformed
 
+    //chama a janela usuários
     private void mnuArquivoUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArquivoUsuariosActionPerformed
         frmUsuarios mUsuarios = new frmUsuarios();
         mUsuarios.setDados(msDados);
@@ -139,9 +148,15 @@ public class frmPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mnuArquivoUsuariosActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    //chama a janela produtos
+    private void mnuArquivoProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuArquivoProdutosActionPerformed
+        frmProdutos msProdutos = new frmProdutos();
+        msProdutos.setDados(msDados);
+        dpnDesk.add(msProdutos);
+        msProdutos.show();
+    }//GEN-LAST:event_mnuArquivoProdutosActionPerformed
+
+    //aqui alterei a interface interna do programa
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -150,7 +165,7 @@ public class frmPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -177,6 +192,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane dpnDesk;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JMenu mnuAjuda;
