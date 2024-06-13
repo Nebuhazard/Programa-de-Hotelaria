@@ -1,0 +1,29 @@
+passos antigos - 
+variáveis do formulário
+
+ep 32 - 
+passo anterior foi criado o formulário de produtos 'frmProdutos', agora será criada a classe 'Utilidades' e validar o o preço.
+
+nesse passo validamos o preço de várias formas no botão 'salvar' do formulário 'frmProdutos'
+
+ep33 -
+passo anterior criamos validações de preço e nesse passo vamos dar uma pausa 'pisa no freio zé' no 'frmProdutos' e vamos criar uma nova classe chamada 'Produto'
+
+dentro da classe 'Produto' são criados os construtores e os get  and setter das variaveis do formulário 'frmProdutos'. Isso dá pra fazer apertando o botão direito, insert code e escolher construtor ou get and setter.
+
+depois disso, vamos na classe dados e adicionamos variaveis privadas  que serão configurações mostrando o maximo de produtos que podem ser adicionados na lista e a contagem de produtos, além disso adicionamos um novo produto na lista de produtos.
+
+ep34 - 
+neste ep criamos mais um produto, dentro da classe 'Dados' criamos variáveis que são funções para criar, salvar, editar, buscar e deletar produtos duplicando as funções criadas para usuários.
+
+ep35-
+neste EP nós 'tiramos o pé do freio zé' e vamos continuar editando o 'frmProdutos'.
+
+nessa parte editamos o botão que adiciona novos produtos ao sistema.
+Também editamos os outros botões.
+também editamos a função 'preencher tabela'. esta foi a mais difícil e importante, pois foi adicionado um switch case para alterar o valor do imposto dependendo de qual foi selecionado.
+
+ep 36-
+no ep anterior foi editado o 'frmProdutos' e a edição dos botões e funções.
+Agora será realizada
+

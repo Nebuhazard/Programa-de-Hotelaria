@@ -8,9 +8,14 @@ public class Dados {
     private int conUsu = 0;
     
     //configurações do máximo de produtos da lista de produtos
-    private int maxPro = 50;
+    private int maxPro = 100;
     private Produto msProdutos[]=new Produto[maxPro];
     private int conPro = 0;
+    
+    //configurações do máximo de produtos da lista de clientes
+    private int maxCli = 100;
+    private Cliente msClientes[]=new Cliente[maxCli];
+    private int conCli = 0;
     
     //3 usuários adicionados na lista de usuários.
     public Dados (){
@@ -40,6 +45,21 @@ public class Dados {
         mProduto = new Produto ("3", "Milho amarelo", 60, 2, "");
         msProdutos[conPro] = mProduto;
         conPro++; 
+        
+        
+        //1 cliente adicionado na lista de produtos.
+        Cliente mCliente;
+        
+        mCliente = new Cliente ("1", "Sandro", "Torres", "residencial ana facó", "85984220130");
+        msClientes[conCli] = mCliente;
+        conCli++;
+        
+        mCliente = new Cliente ("2", "Renan", "zeira", "casa dele","00buraco");
+        msClientes[conCli] = mCliente;
+        conCli++;  
+        
+        
+         
     }
     
     //variavel pública que simboliza a contagem de usuários

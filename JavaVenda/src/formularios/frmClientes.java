@@ -35,17 +35,16 @@ public class frmClientes extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         fotoPerfil = new javax.swing.JLabel();
-        idProduto = new javax.swing.JLabel();
-        txtIDProduto = new javax.swing.JTextField();
-        descrição = new javax.swing.JLabel();
-        txtDescricao = new javax.swing.JTextField();
-        preço = new javax.swing.JLabel();
-        txtPreco = new javax.swing.JTextField();
-        imposto = new javax.swing.JLabel();
-        cmbImposto = new javax.swing.JComboBox<>();
-        anotação = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtAnotacao = new javax.swing.JTextArea();
+        idCliente = new javax.swing.JLabel();
+        txtIDCliente = new javax.swing.JTextField();
+        nome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        sNome = new javax.swing.JLabel();
+        txtSNome = new javax.swing.JTextField();
+        endereço = new javax.swing.JLabel();
+        txtEndereço = new javax.swing.JTextField();
+        telefone = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         btnNovo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
@@ -82,33 +81,25 @@ public class frmClientes extends javax.swing.JInternalFrame {
 
         fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Cliente.png"))); // NOI18N
 
-        idProduto.setText("ID Produto:");
+        idCliente.setText("ID Cliente:");
 
-        txtIDProduto.setEnabled(false);
+        txtIDCliente.setEnabled(false);
 
-        descrição.setText("Descrição:");
+        nome.setText("Nome:");
 
-        txtDescricao.setEnabled(false);
+        txtNome.setEnabled(false);
 
-        preço.setText("Preço:");
+        sNome.setText("S. Nome:");
 
-        txtPreco.setEnabled(false);
+        txtSNome.setEnabled(false);
 
-        imposto.setText("Imposto:");
+        endereço.setText("Endereço:");
 
-        cmbImposto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "10%", "15%" }));
-        cmbImposto.setEnabled(false);
-        cmbImposto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbImpostoActionPerformed(evt);
-            }
-        });
+        txtEndereço.setEnabled(false);
 
-        anotação.setText("Anotação:");
+        telefone.setText("Telefone:");
 
-        txtAnotacao.setColumns(15);
-        txtAnotacao.setRows(5);
-        jScrollPane2.setViewportView(txtAnotacao);
+        txtTelefone.setEnabled(false);
 
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/buscar.png"))); // NOI18N
         btnBuscar.setToolTipText("Busca por um cadastro");
@@ -209,95 +200,96 @@ public class frmClientes extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(btnPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 20, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(anotação)
-                                    .addComponent(preço))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(imposto)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cmbImposto, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(endereço)
+                                            .addGap(7, 7, 7)
+                                            .addComponent(txtEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(sNome)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtSNome, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(telefone)
+                                            .addGap(7, 7, 7)
+                                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(idCliente)
+                                                .addGap(6, 6, 6))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(nome)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtNome))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(fotoPerfil))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(descrição))
-                                    .addComponent(idProduto, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtIDProduto)
-                                    .addComponent(txtDescricao))))
-                        .addGap(24, 24, 24)
-                        .addComponent(fotoPerfil)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(20, 20, 20)
+                                .addComponent(btnPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(34, 34, 34))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(descrição)
-                                    .addComponent(txtDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(nome)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtIDProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(idProduto)))
+                                .addComponent(txtIDCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(idCliente)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(preço)
-                            .addComponent(cmbImposto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(imposto))
+                            .addComponent(sNome)
+                            .addComponent(txtSNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEndereço, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(endereço))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(anotação)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telefone)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
+                        .addGap(34, 34, 34)
                         .addComponent(fotoPerfil)))
-                .addGap(33, 33, 33)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -305,20 +297,18 @@ public class frmClientes extends javax.swing.JInternalFrame {
                     .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnApagar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnUltimo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnProximo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPrimeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
+                .addGap(118, 118, 118))
         );
 
-        getAccessibleContext().setAccessibleName("Cadastrar Clientes");
-
-        setBounds(0, 0, 476, 537);
+        setBounds(0, 0, 462, 519);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
@@ -364,23 +354,25 @@ public class frmClientes extends javax.swing.JInternalFrame {
         btnCancelar.setEnabled(true);
         
        //Caixas de textos da janela
-        txtIDProduto.setEnabled(true);
-        txtPreco.setEnabled(true);
-        txtDescricao.setEnabled(true);
-        txtAnotacao.setEnabled(true);
-        cmbImposto.setEnabled(true);
+        txtIDCliente.setEnabled(true);
+        txtEndereço.setEnabled(true);
+        txtNome.setEnabled(true);
+        txtSNome.setEnabled(true);
+        txtEndereço.setEnabled(true);
+        txtTelefone.setEnabled(true);
         
         //limpar caixas de textos
-        txtIDProduto.setText("");
-        txtPreco.setText("");
-        txtDescricao.setText("");
-        txtAnotacao.setText("");
-        cmbImposto.setSelectedIndex(0);
+        txtIDCliente.setText("");
+        txtEndereço.setText("");
+        txtNome.setText("");
+        txtSNome.setText("");
+        txtEndereço.setText("");
+        txtTelefone.setText("");
         
         //variável para controle da função de adição de usuários
         novo = true;
         
-        txtIDProduto.requestFocus();
+        txtIDCliente.requestFocus();
         
         
         
@@ -400,15 +392,16 @@ public class frmClientes extends javax.swing.JInternalFrame {
         btnCancelar.setEnabled(true);
         
        //Caixas de textos da janela
-        txtPreco.setEnabled(true);
-        txtDescricao.setEnabled(true);
-        txtAnotacao.setEnabled(true);
-        cmbImposto.setEnabled(true);
+        txtEndereço.setEnabled(true);
+        txtNome.setEnabled(true);
+        txtSNome.setEnabled(true);
+        txtEndereço.setEnabled(true);
+        txtTelefone.setEnabled(true);
         
         //variável para controle da função de adição de usuários
         novo = false;
         
-        txtPreco.requestFocus();
+        txtEndereço.requestFocus();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarActionPerformed
@@ -427,9 +420,9 @@ public class frmClientes extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         
         //verificação caso o campo ID esteja vazio
-        if(txtIDProduto.getText().equals("")){
+        if(txtIDCliente.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Favor, inserir o número de ID");
-            txtIDProduto.requestFocusInWindow();
+            txtIDCliente.requestFocusInWindow();
             return;
         }
         //verificação caso o campo Perfil esteja vazio
@@ -439,55 +432,55 @@ public class frmClientes extends javax.swing.JInternalFrame {
             return;
         }
         //verificação caso o campo preço esteja vazio
-        if(txtPreco.getText().equals("")){
+        if(txtEndereço.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Favor, Digitar o preço");
-            txtPreco.requestFocusInWindow();
+            txtEndereço.requestFocusInWindow();
             return;
         }
         
         //verificação caso o campo preço seja letras
-        if(!Utilidades.isNumeric(txtPreco.getText())){
+        if(!Utilidades.isNumeric(txtEndereço.getText())){
             JOptionPane.showMessageDialog(rootPane,"Favor, Digitar somente números");
-            txtPreco.requestFocusInWindow();
+            txtEndereço.requestFocusInWindow();
             return;
         }
         
         //verificação caso o campo preço seja a baixo de 0
-        int preco = Integer.parseInt(txtPreco.getText());
+        int preco = Integer.parseInt(txtEndereço.getText());
         if (preco <= 0){ 
             JOptionPane.showMessageDialog(rootPane,"Favor, Digitar números acima de 0");
-            txtPreco.requestFocusInWindow();
+            txtEndereço.requestFocusInWindow();
             return;
         }
         
         //verificação caso o campo Sobrenome esteja vazio
-        if(txtDescricao.getText().equals("")){
+        if(txtNome.getText().equals("")){
             JOptionPane.showMessageDialog(rootPane,"Favor, Digitar uma descrição");
-            txtDescricao.requestFocusInWindow();
+            txtNome.requestFocusInWindow();
             return;
         }
         
         
         //confirmando se produto já existe (está em laço com a classe pública Dados)
-        int pos = msDados.posicaoProduto(txtIDProduto.getText());
+        int pos = msDados.posicaoProduto(txtIDCliente.getText());
         if(novo){
             if(pos!=-1){
                 JOptionPane.showMessageDialog(rootPane,"Este produto já existe");
-                txtIDProduto.requestFocusInWindow();
+                txtIDCliente.requestFocusInWindow();
                 return;
             }
         }else{
             if(pos == -1){
                 JOptionPane.showMessageDialog(rootPane,"Este produto ainda não existe");
-                txtIDProduto.requestFocusInWindow();
+                txtIDCliente.requestFocusInWindow();
                 return;
             }
         }
         
         //Criando um objeto msProduto da classe Produto com os campos que estão dentro do parêntese
         //o objetivo de criar um novo objeto é para gravar as informações de um novo produto
-        Produto mProduto = new Produto(txtIDProduto.getText(),
-            txtDescricao.getText(),
+        Produto mProduto = new Produto(txtIDCliente.getText(),
+            txtNome.getText(),
             preco,
             cmbImposto.getSelectedIndex(),
             txtAnotacao.getText());
@@ -513,9 +506,9 @@ public class frmClientes extends javax.swing.JInternalFrame {
         btnCancelar.setEnabled(false);
         
         //desabilitar as caixas de textos da janela para que sejam inseridas novas informações
-        txtIDProduto.setEnabled(false);
-        txtPreco.setEnabled(false);
-        txtDescricao.setEnabled(false);
+        txtIDCliente.setEnabled(false);
+        txtEndereço.setEnabled(false);
+        txtNome.setEnabled(false);
         cmbImposto.setEnabled(false);
         txtAnotacao.setEnabled(false);
                 
@@ -527,9 +520,9 @@ public class frmClientes extends javax.swing.JInternalFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         
         //Caixas de textos da janela
-        txtIDProduto.setEnabled(false);
-        txtPreco.setEnabled(false);
-        txtDescricao.setEnabled(false);
+        txtIDCliente.setEnabled(false);
+        txtEndereço.setEnabled(false);
+        txtNome.setEnabled(false);
         cmbImposto.setEnabled(false);
         txtAnotacao.setEnabled(false);
         
@@ -570,9 +563,9 @@ public class frmClientes extends javax.swing.JInternalFrame {
 
     private void mostrarRegistro(){
         //código abaixo é o que captura informações de cadastro do produto atual.
-        txtIDProduto.setText(msDados.getProdutos()[proAtual].getIdProduto());
-        txtDescricao.setText(msDados.getProdutos()[proAtual].getDescricao());
-        txtPreco.setText("" + msDados.getProdutos()[proAtual].getPreco());
+        txtIDCliente.setText(msDados.getProdutos()[proAtual].getIdProduto());
+        txtNome.setText(msDados.getProdutos()[proAtual].getDescricao());
+        txtEndereço.setText("" + msDados.getProdutos()[proAtual].getPreco());
         txtAnotacao.setText(msDados.getProdutos()[proAtual].getAnotacao());
         cmbImposto.setSelectedIndex(msDados.getProdutos()[proAtual].getImposto());
     }
@@ -602,12 +595,7 @@ public class frmClientes extends javax.swing.JInternalFrame {
             default: return "NÃO DEFINIDO";
         }
     }
-    private void cmbImpostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbImpostoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbImpostoActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel anotação;
     private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnApagar;
     private javax.swing.JButton btnBuscar;
@@ -618,18 +606,18 @@ public class frmClientes extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnProximo;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JButton btnUltimo;
-    private javax.swing.JComboBox<String> cmbImposto;
-    private javax.swing.JLabel descrição;
+    private javax.swing.JLabel endereço;
     private javax.swing.JLabel fotoPerfil;
-    private javax.swing.JLabel idProduto;
-    private javax.swing.JLabel imposto;
+    private javax.swing.JLabel idCliente;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel preço;
+    private javax.swing.JLabel nome;
+    private javax.swing.JLabel sNome;
     private javax.swing.JTable tblTabela;
-    private javax.swing.JTextArea txtAnotacao;
-    private javax.swing.JTextField txtDescricao;
-    private javax.swing.JTextField txtIDProduto;
-    private javax.swing.JTextField txtPreco;
+    private javax.swing.JLabel telefone;
+    private javax.swing.JTextField txtEndereço;
+    private javax.swing.JTextField txtIDCliente;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtSNome;
+    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }
